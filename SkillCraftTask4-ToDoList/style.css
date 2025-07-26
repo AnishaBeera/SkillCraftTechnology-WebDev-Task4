@@ -1,0 +1,242 @@
+:root {
+  --bg-color: #1e1e2f;
+  --text-color: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.12);
+  --accent: #00e1ff;
+  --input-bg: rgba(255, 255, 255, 0.15);
+  --button-bg: linear-gradient(to right, #43cea2, #185a9d);
+  --button-hover: linear-gradient(to right, #42e695, #3bb2b8);
+  --datetime-bg: rgba(0, 0, 0, 0.25);
+}
+
+body.light {
+  --bg-color: #f0f4f8;
+  --text-color: #222;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --accent: #007bff;
+  --input-bg: #ffffff;
+  --button-bg: linear-gradient(to right, #42a5f5, #478ed1);
+  --button-hover: linear-gradient(to right, #64b5f6, #5c9ded);
+  --datetime-bg: rgba(0, 0, 0, 0.1);
+}
+
+body.light .input-area input[type="text"],
+body.light .input-area input[type="datetime-local"] {
+  color: #000000 !important;
+}
+
+body.light .input-area input::placeholder {
+  color: #444;
+}
+
+
+body {
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-image 0.6s ease-in-out;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+}
+
+.container {
+  background: var(--card-bg);
+  color: var(--text-color);
+}
+
+.input-area input {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+}
+
+.input-area input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.input-area button {
+  background: var(--button-bg);
+}
+
+.input-area button:hover {
+  background: var(--button-hover);
+}
+
+li {
+  background: var(--card-bg);
+  border-left: 5px solid var(--accent);
+}
+
+li.completed {
+  border-left-color: #00c853;
+}
+
+.datetime {
+  background: var(--datetime-bg);
+  color: var(--text-color);
+}
+
+
+.theme-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+#themeBtn {
+  background: transparent;
+  color: var(--text-color);
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-image 0.6s ease-in-out;
+}
+
+
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px 20px;
+  width: 90%;
+  max-width: 600px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.input-area {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-area input,
+.input-area button {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: 16px;
+}
+
+.input-area input[type="text"] {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.input-area input[type="datetime-local"] {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.input-area button {
+  background: linear-gradient(to right, #43cea2, #185a9d);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.input-area button:hover {
+  transform: scale(1.03);
+  background: linear-gradient(to right, #42e695, #3bb2b8);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 25px;
+}
+
+li {
+  background: rgba(255, 255, 255, 0.12);
+  border-left: 5px solid rgba(18, 172, 244, 0.808);
+  border-radius: 12px;
+  margin-bottom: 15px;
+  padding: 15px 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.2s ease;
+}
+
+li:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+li.completed {
+  border-left-color: #00c853;
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+
+li span[contenteditable] {
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding-bottom: 4px;
+  outline: none;
+  color: #ffffff;
+}
+
+li .datetime {
+  margin-top: 5px;
+  font-size: 0.9em;
+  background: rgba(0, 0, 0, 0.25);
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  color: #e0f7fa;
+  width: fit-content;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+button.action-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button.action-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
